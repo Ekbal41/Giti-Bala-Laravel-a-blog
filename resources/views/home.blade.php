@@ -70,12 +70,10 @@
                 <div class="d-flex justify-content-between">
                     <div class=""><span class="text-primary fw-bold">Posted : </span> {{$post->created_at->diffForHumans()}}</div>
                     <div class="">
-                        <span class="badge bg-primary">Primary</span>
-                        <span class="badge bg-secondary">Secondary</span>
-                        <span class="badge bg-success">Success</span>
-                        <span class="badge bg-danger">Danger</span>
-                        <span class="badge bg-warning text-dark">Warning</span>
-                        <span class="badge bg-info text-dark">Info</span>
+                        <span class="badge bg-primary">Laravel</span>
+                        <span class="badge bg-secondary">Django</span>
+                        <span class="badge bg-success">Spring</span>
+                        
                     </div>
                 </div>
             </div>

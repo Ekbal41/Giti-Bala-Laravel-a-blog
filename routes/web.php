@@ -27,6 +27,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::resource('posts', App\Http\Controllers\PostController::class);
+    Route::resource('role', App\Http\Controllers\RoleController::class);
+    Route::resource('permission', App\Http\Controllers\PermissionController::class);
 });
 Route::get('/', [App\Http\Controllers\BaseController::class, 'index'])->name('home');
 

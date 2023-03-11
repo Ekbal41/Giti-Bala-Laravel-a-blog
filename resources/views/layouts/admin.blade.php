@@ -34,11 +34,28 @@
                 <div class="d-flex flex-column">
                     <div class="{{ request()->routeIs('dashboard') ?  'bg-primary text-white sidebar-item px-3 py-2 my-2 rounded mx-2' : 'sidebar-item px-3 py-2 my-2 rounded mx-2'}}  "></i> <a class="" href="{{ route('dashboard') }}"><i class="bi bi-person-circle mx-2"></i>Dashboard</a></div>
                     <div class="{{ request()->routeIs('admin') ?  'bg-primary text-white sidebar-item px-3 py-2 my-2 rounded mx-2' : 'sidebar-item px-3 py-2 my-2 rounded mx-2'}}  "></i> <a class="" href="{{ route('admin') }}"><i class="bi bi-person-circle mx-2"></i>Admin</a></div>
+
+                    @can('can_create')
                     <div class="{{ request()->routeIs('posts.index') ?  'bg-primary text-white sidebar-item px-3 py-2 my-2 rounded mx-2' : 'sidebar-item px-3 py-2 my-2 rounded mx-2'}}  "><i class="bi bi-pencil-square mx-2"></i>
                         <a class="" href="{{ route('posts.index') }}">Add New</a>
                     </div>
-                    <div class="sidebar-item px-3 py-2 my-2 rounded mx-2 "> <i class="bi bi-person-vcard px-2"></i>Roles</div>
-                    <div class="sidebar-item px-3 py-2 my-2 rounded mx-2 "><i class="bi bi-person-video2 px-2"></i>Permitions</div>
+                    @endcan
+
+
+
+
+                    @role('admin')
+
+                    <div class="{{ request()->routeIs('role.index') ?  'bg-primary text-white sidebar-item px-3 py-2 my-2 rounded mx-2' : 'sidebar-item px-3 py-2 my-2 rounded mx-2'}}  "><i class="bi bi-person-vcard px-2"></i>
+                        <a class="" href="{{ route('role.index') }}">Roles</a>
+                    </div>
+                    <div class="{{ request()->routeIs('permission.index') ?  'bg-primary text-white sidebar-item px-3 py-2 my-2 rounded mx-2' : 'sidebar-item px-3 py-2 my-2 rounded mx-2'}}  "><i class="bi bi-person-video2 px-2"></i>
+                        <a class="" href="{{ route('permission.index') }}">Permission</a>
+                    </div>
+                    @endrole
+
+
+
                 </div>
             </aside>
             @yield('content')
